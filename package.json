@@ -1,0 +1,28 @@
+{
+  "name": "ltdproject",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@svgr/webpack": "^8.1.0",
+    "autoprefixer": "latest",
+    "bcrypt": "latest",
+    "eslint-config-next": "^15.0.3",
+    "framer-motion": "latest",
+    "mongodb": "latest",
+    "mongoose": "latest",
+    "next": "^15.0.3",
+    "next-auth": "latest",
+    "postcss": "latest",
+    "react": "latest",
+    "react-dom": "latest",
+    "react-scroll-parallax": "latest",
+    "tailwindcss": "latest",
+    "three": "latest"
+  }
+}
