@@ -26,14 +26,14 @@ module.exports = {
                 }
             },
             colors: {
-                primary1: '#2C2C2C',
-                primary2: '#5A5A5A',
-                secondary1: '#8D8741',
-                secondary2: '#D9C5B2',
-                accent1: '#E27D60 ',
-                accent2: '#85CDCA',
-                foregraound: '#EAEAEA',
-                background: '#121212'
+                primary: '#4A4A4A',
+                primary2: '#2B3136',
+                secondary1: '#D4A373',
+                secondary2: '#F5E6CA',
+                accent1: '#E63946 ',
+                accent2: '#457B9D',
+                foregraound: '#FFFFFF',
+                background: '#1E1E1E'
             }
         }
     },

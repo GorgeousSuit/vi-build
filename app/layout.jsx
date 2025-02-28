@@ -11,7 +11,7 @@ const roboto = Roboto({
   });
 
 export const metadata = {
-    title: 'LTD Projects',
+    title: 'VI-(BUILD)',
     description: 'Template'
 };
 

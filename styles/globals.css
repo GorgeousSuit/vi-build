@@ -14,7 +14,11 @@
 
 /* Tailwind Styles */
 .btn {
-    @apply hover:bg-[#FF4A1C] hover:border-[#FF4A1C] hover:text-white active:text-[#FF4A1C] active:bg-black active:border-[#FF4A1C] disabled:text-[#8C8C8C] disabled:border-[#8C8C8C];
+    @apply hover:bg-[#4A4A4A] hover:border-[#4A4A4A] hover:text-white active:text-[#D4A373] active:bg-[#1E1E1E] ease-linear duration-[0.05s] hover:scale-[1.06] active:translate-y-1;
+}
+
+.txt {
+    @apply hover:text-[#2B3136] active:text-[#D4A373] ease-linear duration-[0.05s] hover:scale-[1.06] active:scale-[0.95];
 }
 
 .flex-center {
