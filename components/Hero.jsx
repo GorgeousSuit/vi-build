@@ -2,9 +2,9 @@ import Image from 'next/image';
 
 const Banner = () => {
     return (
-        <section className="w-[100%] py-[60px] relative flex justify-center mt-[110px] overflow-hidden px-[12px] sm:px-[24px] lg:px-[32px]">
-            <div className="h-[410px] max-w-[1000px] rounded-[32px] rounded-br-none border border-primary relative ">
-                <div className="w-[97.66vw] lg:w-full h-full overflow-hidden rounded-[32px] rounded-br-none ">
+        <section className="py-[60px] relative flex justify-center mt-[110px] overflow-hidden px-[12px] sm:px-[24px] lg:px-[32px]">
+            <div className="w-full h-[410px] max-w-[1000px] rounded-[32px] rounded-br-none border border-primary relative ">
+                <div className="w-[calc-(100%-24px)] lg:w-full h-full overflow-hidden rounded-[32px] rounded-br-none ">
                     <Image
                         src="/images/Banner1.jpg"
                         alt="Image"
@@ -13,7 +13,7 @@ const Banner = () => {
                         className="min-w-[1000px] max-sm:object-[calc(100vw-880px)_-200px] lg:w-full object-[calc(100vw-1000px)_-200px] min-[1000px]:object-[center_-200px]"
                         unoptimized
                     />
-                    <div className="absolute top-0 max-sm:right-[calc(-2vw-122px)] right-[calc(-2vw-2px)] lg:right-[-1px] h-[410px] w-[1000px] rounded-[32px] rounded-br-none">
+                    <div className="absolute top-0 max-sm:right-[-145px] right-[-50px] lg:right-[-1px] h-[410px] w-[1000px] rounded-[32px] rounded-br-none">
                         <Image
                             src="/images/Banner1ladder.png"
                             alt="Image"
