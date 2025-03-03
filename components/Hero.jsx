@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 const Banner = () => {
     return (
-        <section className="w-[100%] px-[16px] py-[60px] relative flex justify-center mt-[110px] overflow-hidden">
+        <section className="w-[100%] py-[60px] relative flex justify-center mt-[110px] overflow-hidden px-[12px] sm:px-[24px] lg:px-[32px]">
             <div className="h-[410px] max-w-[1000px] rounded-[32px] rounded-br-none border border-primary relative ">
                 <div className="w-[97.66vw] lg:w-full h-full overflow-hidden rounded-[32px] rounded-br-none ">
                     <Image

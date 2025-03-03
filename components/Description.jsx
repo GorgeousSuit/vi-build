@@ -3,7 +3,7 @@ import Image from '@node_modules/next/image';
 
 const Description = () => {
     return (
-        <section className="w-[100%] xl:h-[550px] py-[60px] relative flex max-xl:flex-col justify-between mt-[110px]">
+        <section className="w-[100%] xl:h-[550px] py-[60px] relative flex max-xl:flex-col justify-between px-[12px] sm:px-[24px] lg:px-[32px]">
             <div className="place-self-start">
             <Image
                 src="/images/About/Worker.JPG"

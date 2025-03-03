@@ -47,7 +47,7 @@ const services = [
 
 const Services = () => {
     return (
-        <section className="text-center">
+        <section className="text-center px-[12px] sm:px-[24px] lg:px-[32px]">
             <p className="text-[40px] leading-[50px]">Our Expert Services</p>
             <p className="leading-[26px] mt-[20px]">
                 Explore a vast array of renovation services tailored to your

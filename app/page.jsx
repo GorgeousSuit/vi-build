@@ -9,7 +9,7 @@ import Footer from '@components/Footer';
 
 const Home = () => {
     return (
-        <div className="absolute w-[calc(100vw)] space-y-[24px] md:space-y-[30px] lg:space-y-[64px] text-primary2">
+        <div className="absolute w-[calc(100vw)] space-y-[90px] lg:space-y-[180px] text-primary2">
             <Hero />
             <Description />
             <DescriptionBanner />

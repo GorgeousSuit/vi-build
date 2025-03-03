@@ -1,14 +1,16 @@
+'use client';
+
 import { FaPhoneAlt } from 'react-icons/fa';
 import { IoMdMail } from 'react-icons/io';
 import { BsGeoAltFill } from 'react-icons/bs';
-import { FaXTwitter } from "react-icons/fa6";
-import { FaGoogle } from "react-icons/fa";
-import { FaInstagram } from "react-icons/fa";
-import { FaFacebookF } from "react-icons/fa";
+import { FaXTwitter } from 'react-icons/fa6';
+import { FaGoogle } from 'react-icons/fa';
+import { FaInstagram } from 'react-icons/fa';
+import { FaFacebookF } from 'react-icons/fa';
 
 const ContactUs = () => {
     return (
-        <div className="w-full px-4 py-12 md:px-12 lg:px-20 bg-gray-100 font-nunito text-primary2">
+        <div className="w-full md:px-12 bg-gray-100 font-nunito text-primary2 px-[12px] sm:px-[24px] lg:px-[32px]">
             <div className="max-w-6xl mx-auto flex flex-wrap">
                 <div className="w-full lg:w-7/12 border-b-2 lg:border-r-2 lg:border-b-0 border-gray-400 p-6 lg:p-8">
                     <form className="space-y-6">
@@ -69,9 +71,9 @@ const ContactUs = () => {
                             ></textarea>
                         </div>
                         <div className="text-center">
-				    <button className="px-[35px] py-[10px] w-[150px] text-white bg-primary2 rounded-lg text-nowrap btn">
-                    Submit
-                </button>
+                            <button className="px-[35px] py-[10px] w-[150px] text-white bg-primary2 rounded-lg text-nowrap btn">
+                                Submit
+                            </button>
                         </div>
                     </form>
                 </div>
@@ -104,16 +106,16 @@ const ContactUs = () => {
                     </div>
                     <div className="flex mt-8 space-x-4 text-primary2">
                         <a href="#">
-				    <FaGoogle className="w-6 h-6 "/>
+                            <FaGoogle className="w-6 h-6 " />
                         </a>
                         <a href="#">
-				    <FaXTwitter className="w-6 h-6"/>
+                            <FaXTwitter className="w-6 h-6" />
                         </a>
                         <a href="#">
-				    <FaInstagram className="w-6 h-6"/>
+                            <FaInstagram className="w-6 h-6" />
                         </a>
                         <a href="#">
-				    <FaFacebookF className="w-6 h-6"/>
+                            <FaFacebookF className="w-6 h-6" />
                         </a>
                     </div>
                 </div>

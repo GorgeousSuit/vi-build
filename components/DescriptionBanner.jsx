@@ -2,7 +2,7 @@ import Image from '@node_modules/next/image';
 
 const DescriptionBanner = () => {
     return (
-        <section className="sm:w-[100%] min-h-[350px] h-[38.75vw] xl:h-[496px] overflow-hidden relative flex justify-center text-white max-sm:rounded-[32px] max-sm:rounded-br-none max-sm:mx-[20px]">
+        <section className="sm:w-[100%] min-h-[350px] h-[38.75vw] xl:h-[496px] overflow-hidden relative flex justify-center text-white max-sm:rounded-[32px] max-sm:rounded-br-none">
             <Image
                 src="/images/About/IMG_5457.JPG"
                 alt="Image"

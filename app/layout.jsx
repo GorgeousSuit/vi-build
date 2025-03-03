@@ -4,11 +4,10 @@ import { Roboto } from 'next/font/google';
 import Nav from '@components/Nav';
 import Head from 'next/head';
 
-
 const roboto = Roboto({
-    weight: ['400', '700'], 
-    subsets: ['latin'],    
-  });
+    weight: ['400', '700'],
+    subsets: ['latin']
+});
 
 export const metadata = {
     title: 'VI-(BUILD)',
@@ -25,7 +24,7 @@ const RootLayout = ({ children }) => {
                 />
             </Head>
             <body className={`${roboto.className}`}>
-                    <Nav className="relative" />
+                <Nav className="relative" />
                 <main>{children}</main>
             </body>
         </html>
