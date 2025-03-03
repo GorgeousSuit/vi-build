@@ -7,7 +7,7 @@ const Nav = () => {
     const [isOpen, setIsOpen] = useState(false);
 
     return (
-        <nav className="fixed top-[0px] left-[0px] z-50 w-[calc(100%)] bg-white font-bold">
+        <nav className="fixed top-[0px] left-[0px] z-50 w-[calc(100%)] bg-white font-bold text-primary2 hidden">
             <div className="max-w-[1280px] mx-auto flex items-center justify-between px-8 py-[10px]">
                 <a href="#" className="text-2xl font-bold uppercase">
                     <Logo />

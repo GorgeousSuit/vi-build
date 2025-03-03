@@ -14,7 +14,7 @@
 
 /* Tailwind Styles */
 .btn {
-    @apply hover:bg-[#4A4A4A] hover:border-[#4A4A4A] hover:text-white active:text-[#D4A373] active:bg-[#1E1E1E] ease-linear duration-[0.05s] hover:scale-[1.06] active:translate-y-1;
+    @apply sm:hover:bg-[#4A4A4A] sm:hover:border-[#4A4A4A] sm:hover:text-white active:text-[#D4A373] active:bg-[#1E1E1E] ease-linear duration-[0.05s] sm:hover:scale-[1.06] active:translate-y-1;
 }
 
 .txt {
