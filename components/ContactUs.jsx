@@ -7,10 +7,39 @@ import { FaXTwitter } from 'react-icons/fa6';
 import { FaGoogle } from 'react-icons/fa';
 import { FaInstagram } from 'react-icons/fa';
 import { FaFacebookF } from 'react-icons/fa';
+import { motion, useInView } from 'framer-motion';
+import { useRef, useState, useEffect } from 'react';
 
 const ContactUs = () => {
+    const ref = useRef(null);
+    const [mobileView, setMobileView] = useState(false);
+
+    useEffect(() => {
+        const handleResize = () => {
+            setMobileView(window.innerWidth <= 1280);
+        };
+        handleResize();
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
+
+    const isInView = useInView(ref, {
+        margin: mobileView ? '0% 0px 0% 0px' : '-30% 0px -30% 0px'
+    });
+
     return (
-        <div className="w-full md:px-12 bg-gray-100 font-nunito text-primary2">
+        <motion.div
+            ref={ref}
+            initial={{opacity: 0,x: 100 }}
+            animate={isInView && {opacity: 1, x: 0 }}
+            transition={{
+                duration: 1,
+                ease: [0.22, 1, 0.36, 1]
+            }}
+            viewport={{ once: true }}
+            id="ContactUs"
+            className="w-full md:px-12 bg-gray-100 font-nunito text-primary2 rounded-[32px]"
+        >
             <div className="max-w-6xl mx-auto flex flex-wrap">
                 <div className="w-full lg:w-7/12 border-b-2 lg:border-r-2 lg:border-b-0 border-gray-400 p-6 lg:p-8">
                     <form className="space-y-6">
@@ -120,7 +149,7 @@ const ContactUs = () => {
                     </div>
                 </div>
             </div>
-        </div>
+        </motion.div>
     );
 };
 

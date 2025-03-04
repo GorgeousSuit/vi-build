@@ -24,9 +24,9 @@ const Nav = () => {
             }`}
         >
             <div className="max-w-[1280px] mx-auto flex items-center justify-between py-4 lg:py-5">
-                <a href="#" className="text-2xl font-bold uppercase">
+                <Link href="/" className="text-2xl font-bold uppercase">
                     <Logo className="w-[100px] h-[100px] my-[-20px]" />
-                </a>
+                </Link>
 
                 {/* Hamburger Button */}
                 <button
@@ -53,17 +53,24 @@ const Nav = () => {
                         </Link>
                     </li>
                     <li className="px-3 py-3 lg:p-0">
-                        <Link href="/gallery" className="block txt lg:mx-[70px]">
+                        <Link
+                            href="/gallery"
+                            className="block txt lg:mx-[70px]"
+                        >
                             Gallery
                         </Link>
                     </li>
-                    <button className="m-3 px-9 py-2.5 w-[150px] text-white bg-primary2 rounded-lg text-nowrap btn lg:hidden">
+                    <Link href="#ContactUs">
+                        <button className="m-3 px-9 py-2.5 w-[150px] text-white bg-primary2 rounded-lg text-nowrap btn lg:hidden">
+                            Contact Us
+                        </button>
+                    </Link>
+                </ul>
+                <Link href="#ContactUs">
+                    <button className="px-9 py-2.5 w-[150px] text-white bg-primary2 rounded-lg text-nowrap btn max-lg:hidden">
                         Contact Us
                     </button>
-                </ul>
-                <button className="px-9 py-2.5 w-[150px] text-white bg-primary2 rounded-lg text-nowrap btn max-lg:hidden">
-                    Contact Us
-                </button>
+                </Link>
             </div>
         </nav>
     );

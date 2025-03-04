@@ -3,11 +3,14 @@
 import { motion, useInView } from 'framer-motion';
 import { useRef, useState, useEffect } from 'react';
 import ServiceItem from '@components/OurServices/ServiceItem.jsx';
+import ServiceItemMobile from "@components/OurServices/ServiceItemMobile.jsx"
 import FirstIcon from '/public/images/OurServices/1.svg';
 import SecondIcon from '/public/images/OurServices/2.svg';
 import ThirdIcon from '/public/images/OurServices/3.svg';
 import FourthIcon from '/public/images/OurServices/4.svg';
 import FifthIcon from '/public/images/OurServices/5.svg';
+
+
 
 const services = [
     {
@@ -49,6 +52,18 @@ const services = [
 ];
 
 const Services = () => {
+    const ref = useRef(null);
+    const [mobileView, setMobileView] = useState(false);
+
+    useEffect(() => {
+        const handleResize = () => {
+            setMobileView(window.innerWidth <= 1024);
+        };
+        handleResize();
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
+
     return (
         <section className="text-center px-[12px] sm:px-[24px] lg:px-[32px]">
             <p className="text-[40px] leading-[50px]">Our Expert Services</p>
@@ -60,11 +75,16 @@ const Services = () => {
             <div className="flex flex-wrap max-w-[1400px] justify-between items-center mx-auto max-lg:flex-col">
                 {services.map((service, index) => {
                     return (
-                        <ServiceItem
+                        !mobileView ? (<ServiceItem
                             key={index}
                             {...service}
                             index={index}
-                        />
+                        />) : (<ServiceItemMobile
+                            key={index}
+                            {...service}
+                            index={index}
+                        />)
+                        
                     );
                 })}
             </div>

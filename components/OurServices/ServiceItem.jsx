@@ -32,49 +32,28 @@ const ServiceItem = ({ title, description, Icon, index }) => {
             : 'mt-[20px]';
 
     return (
-
-        <div className="max-lg:flex max-lg:justify-center ">
+        <motion.div className="max-lg:flex max-lg:justify-center ">
             <motion.div
-                    ref={ref}
-                    initial={{opacity:0, y: 415 }}
-                    animate={isInView && {opacity:1, y: 0 }}
-                    transition={{
-                        duration: 1,
-                        delay: index * 0.2,
-                        ease: [0.22, 1, 0.36, 1]
-                    }}
-                    viewport={{ once: true }}
-                    className={`max-lg:hidden p-[20px] max-sm:w-[90%] max-lg:w-[100%] lg:p-[50px] max-w-[415px] max-[1400px]:w-[29.64vw] lg:h-[330px] border-[2px] border-secondary1 rounded-[16px] text-left flex flex-col justify-center ${margin} max-lg:mt-[20px] mx-[10px]`}
-                >
-                    <div className="p-[12px] bg-secondary2 inline-flex w-fit h-fit mb-[20px]">
-                        <Icon className="w-[26px] h-[26px] text-background" />
-                    </div>
-                    <p className="text-[24px] font-[700] leading-[34px] mb-[12px]">
-                        {title}
-                    </p>
-                    <p className="leading-[26px]">{description}</p>
-                </motion.div>
-            
-                <motion.div
-                    ref={ref}
-                    initial={{opacity:0, x: index % 2 === 0 ? 415 : -415 }}
-                    animate={isInView && { opacity:1, x: 0 }}
-                    transition={{
-                        duration: 1,
-                        delay: 0.4,
-                        ease: [0.22, 1, 0.36, 1]
-                    }}
-                    className={`lg:hidden p-[20px] max-sm:w-[90%] max-lg:w-[100%] lg:p-[50px] max-w-[415px] max-[1400px]:w-[29.64vw] lg:h-[330px] border-[2px] border-secondary1 rounded-[16px] text-left flex flex-col justify-center ${margin} max-lg:mt-[20px] mx-[10px]`}
-                >
-                    <div className="p-[12px] bg-secondary2 inline-flex w-fit h-fit mb-[20px]">
-                        <Icon className="w-[26px] h-[26px] text-background" />
-                    </div>
-                    <p className="text-[24px] font-[700] leading-[34px] mb-[12px]">
-                        {title}
-                    </p>
-                    <p className="leading-[26px]">{description}</p>
-                </motion.div>
-        </div>
+                ref={ref}
+                initial={{ opacity: 0, y: 415 }}
+                animate={isInView && { opacity: 1, y: 0 }}
+                transition={{
+                    duration: 1,
+                    delay: index * 0.2,
+                    ease: [0.22, 1, 0.36, 1]
+                }}
+                viewport={{ once: true }}
+                className={`p-[20px] max-sm:w-[90%] max-lg:w-[100%] lg:p-[50px] max-w-[415px] max-[1400px]:w-[29.64vw] lg:h-[330px] border-[2px] border-secondary1 rounded-[16px] text-left flex flex-col justify-center ${margin} max-lg:mt-[20px] mx-[10px]`}
+            >
+                <div className="p-[12px] bg-secondary2 inline-flex w-fit h-fit mb-[20px]">
+                    <Icon className="w-[26px] h-[26px] text-background" />
+                </div>
+                <p className="text-[24px] font-[700] leading-[34px] mb-[12px]">
+                    {title}
+                </p>
+                <p className="leading-[26px]">{description}</p>
+            </motion.div>
+        </motion.div>
     );
 };
 
