@@ -2,6 +2,7 @@
 
 import Logo from '/public/logo/LogoBlack.svg';
 import { useState, useEffect } from 'react';
+import Link from '@node_modules/next/link';
 
 const Nav = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -47,14 +48,14 @@ const Nav = () => {
                     } lg:block absolute lg:static top-20 right-0 w-full bg-white`}
                 >
                     <li className="px-3 py-3 lg:p-0">
-                        <a href="#" className="block txt">
+                        <Link href="/" className="block txt">
                             Home
-                        </a>
+                        </Link>
                     </li>
                     <li className="px-3 py-3 lg:p-0">
-                        <a href="#" className="block txt lg:mx-[70px]">
-                            About
-                        </a>
+                        <Link href="/gallery" className="block txt lg:mx-[70px]">
+                            Gallery
+                        </Link>
                     </li>
                     <button className="m-3 px-9 py-2.5 w-[150px] text-white bg-primary2 rounded-lg text-nowrap btn lg:hidden">
                         Contact Us

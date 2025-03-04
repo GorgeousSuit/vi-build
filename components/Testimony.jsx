@@ -1,8 +1,16 @@
+"use client"
+
 import Image from 'next/image';
+import { motion } from 'framer-motion';
+
+const myAnimation = {
+    initial: { opacity: 0, x: -50 },
+    inView: { opacity: 1, x: 0, transition: { delay: 2 } }
+};
 
 const Testimonial = () => {
     return (
-        <div className="bg-gray-100 p-8 md:p-12 rounded-2xl shadow-lg max-w-3xl mx-auto">
+        <motion.div className="bg-gray-100 p-8 md:p-12 rounded-2xl shadow-lg max-w-3xl mx-auto">
             <div className="flex items-center gap-6">
                 <div className="w-24 h-24 relative">
                     <Image
@@ -36,7 +44,7 @@ const Testimonial = () => {
                     className="opacity-70"
                 />
             </div>
-        </div>
+        </motion.div>
     );
 };
 
