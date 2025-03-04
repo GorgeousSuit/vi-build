@@ -144,7 +144,7 @@ const Nav = () => {
                     </ul>
                 )}
                 <button
-                    onClick={() => handleClick}
+                    onClick={handleClick}
                     className="px-9 py-2.5 w-[150px] text-white bg-primary2 rounded-lg text-nowrap btn max-lg:hidden"
                 >
                     Contact Us

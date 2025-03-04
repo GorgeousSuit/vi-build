@@ -27,7 +27,7 @@ const Testimonial = () => {
             initial={{ opacity: 0, x: 100 }}
             animate={isInView && { opacity: 1, x: 0 }}
             transition={{
-                duration: 1,
+                duration: 2,
                 ease: [0.22, 1, 0.36, 1]
             }}
             viewport={{ once: true }}
@@ -59,7 +59,7 @@ const Testimonial = () => {
                     initial={{ x: -660 }}
                     animate={isInView && { x: 0 }}
                     transition={{
-                        duration: 1.5,
+                        duration: 2.5,
                         delay: 0.3,
                         ease: [0.22, 1, 0.36, 1]
                     }}
@@ -77,7 +77,7 @@ const Testimonial = () => {
             initial={{ opacity:0 }}
             animate={isInView && { opacity:1 }}
             transition={{
-                duration: 2,
+                duration: 3,
                 delay:1.5,
                 ease: [0.22, 1, 0.36, 1]
             }}

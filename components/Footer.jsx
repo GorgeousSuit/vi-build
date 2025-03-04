@@ -30,7 +30,7 @@ export default function Footer() {
               <h3 className="font-bold">Contact</h3>
               <ul className="mt-2 space-y-1">
                 <li><a href="mailto:contact@vibuild.com" className="hover:underline">contact@vibuild.com</a></li>
-                <li><a href="tel:1800-RENOVATE" className="hover:underline">347 Barking Road street</a></li>
+                <li><a href="tel:1800-RENOVATE" className="hover:underline">347 Barking Road Str.</a></li>
                 <li className="flex space-x-3 mt-2">
                   <a href="#" className="hover:text-gray-400"><FaInstagram /></a>
                   <a href="#" className="hover:text-gray-400"><FaXTwitter /></a>
@@ -41,7 +41,7 @@ export default function Footer() {
           </div>
         </div>
         <hr className="border-primary my-6" />
-        <p className="text-center text-sm">&copy; 2023 VI-(BUILD) Projects. All rights reserved</p>
+        <p className="text-center text-sm">&copy;2025 VI-(BUILD) Projects LTD. 347 Barking Road Str. London UK. All rights reserved</p>
       </div>
     </footer>
   );

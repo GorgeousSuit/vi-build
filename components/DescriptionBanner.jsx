@@ -39,7 +39,7 @@ const DescriptionBanner = () => {
                             initial={{ y: 100 }}
                             animate={isInView && { y: 0 }}
                             transition={{
-                                duration: 1,
+                                duration: 1.5,
                                 ease: [0.22, 1, 0.36, 1]
                             }}
                             viewport={{ once: true }}
@@ -54,7 +54,7 @@ const DescriptionBanner = () => {
                             initial={{ y: 100 }}
                             animate={isInView && { y: 0 }}
                             transition={{
-                                duration: 1,
+                                duration: 1.5,
                                 delay: 0.2,
                                 ease: [0.22, 1, 0.36, 1]
                             }}
@@ -69,7 +69,7 @@ const DescriptionBanner = () => {
                         initial={{ opacity: 0, y: 50 }}
                         animate={isInView && { opacity: 1, y: 0 }}
                         transition={{
-                            duration: 1,
+                            duration: 1.5,
                             delay: 0.4,
                             ease: [0.22, 1, 0.36, 1]
                         }}
@@ -87,8 +87,8 @@ const DescriptionBanner = () => {
                             initial={{ opacity: 0 }}
                             animate={isInView && { opacity: 1 }}
                             transition={{
-                                duration: 2,
-                                delay: 0.7,
+                                duration: 1.5,
+                                delay: 0.8,
                                 ease: [0.22, 1, 0.36, 1]
                             }}
                             viewport={{ once: true }}

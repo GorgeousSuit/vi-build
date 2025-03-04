@@ -38,7 +38,7 @@ const ServiceItem = ({ title, description, Icon, index }) => {
                     initial={{ opacity: 0, x: index % 2 === 0 ? 300 : -300 }}
                     animate={isInView && { opacity: 1, x: 0 }}
                     transition={{
-                        duration: 1,
+                        duration: 2,
                         delay: 0.4,
                         ease: [0.22, 1, 0.36, 1]
                     }}

@@ -35,7 +35,7 @@ const Description = () => {
                 initial={{ opacity: 0, x: -50 }}
                 animate={isInView && { opacity: 1, x: 0 }}
                 transition={{
-                    duration: 1,
+                    duration: 1.5,
                     ease: [0.22, 1, 0.36, 1]
                 }}
                 viewport={{ once: true }}
@@ -56,7 +56,7 @@ const Description = () => {
                         initial={{ y: 65 }}
                         animate={isInView && { y: 0 }}
                         transition={{
-                            duration: 1,
+                            duration: 1.5,
                             delay: 0.6,
                             ease: [0.22, 1, 0.36, 1]
                         }}
@@ -79,7 +79,7 @@ const Description = () => {
                         initial={{ y: 100 }}
                         animate={isInView && { y: 0 }}
                         transition={{
-                            duration: 1,
+                            duration: 1.5,
                             ease: [0.22, 1, 0.36, 1]
                         }}
                         viewport={{ once: true }}
@@ -93,7 +93,7 @@ const Description = () => {
                     initial={{ opacity: 0, y: 50 }}
                     animate={isInView && { opacity: 1, y: 0 }}
                     transition={{
-                        duration: 1,
+                        duration: 1.5,
                         delay: 0.4,
                         ease: [0.22, 1, 0.36, 1]
                     }}
@@ -110,7 +110,7 @@ const Description = () => {
                         initial={{ y: -75 }}
                         animate={isInView && { y: 0 }}
                         transition={{
-                            duration: 1,
+                            duration: 1.5,
                             delay: 0.6,
                             ease: [0.22, 1, 0.36, 1]
                         }}
@@ -130,7 +130,7 @@ const Description = () => {
                 initial={{ opacity: 0, x: 50 }}
                 animate={isInView && { opacity: 1, x: 0 }}
                 transition={{
-                    duration: 1,
+                    duration: 1.5,
                     ease: [0.22, 1, 0.36, 1]
                 }}
                 viewport={{ once: true }}

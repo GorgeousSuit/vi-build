@@ -2,10 +2,24 @@
 
 import Image from 'next/image';
 import { motion, useInView } from 'framer-motion';
+import { useState, useEffect } from 'react';
+import Loader from '@components/Loaders/Loader.jsx';
+import Preloader from '@components/Loaders/Preloader.jsx';
 
 const Banner = () => {
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        setTimeout(() => setLoading(false), 500);
+    }, []);
+
+    if (loading) {
+        return <Loader />;
+      }
+
     return (
         <section className="pt-[30px] pb-[80px] relative flex justify-center mt-[110px] overflow-hidden px-[12px] sm:px-[24px] lg:px-[32px]">
+            <Preloader />
             <div className="w-full h-[410px] max-w-[1000px] rounded-[32px] rounded-br-none border border-primary relative ">
                 <div className="w-[calc-(100%-24px)] lg:w-full h-full overflow-hidden rounded-[32px] rounded-br-none ">
                     <Image
@@ -16,27 +30,23 @@ const Banner = () => {
                         className="min-w-[1000px] max-sm:object-[calc(100vw-880px)_-200px] lg:w-full object-[calc(100vw-1000px)_-200px] min-[1000px]:object-[center_-200px]"
                         unoptimized
                     />
-                    <motion.div
-                        initial={{opacity: 0, rotate: -20, x: 100}} 
-                        animate={{opacity: 1, rotate: 0, x: 0 }} 
-                        transition={{
-                          type: "spring",
-                          stiffness: 100,
-                          damping: 15,
-                          duration: 1,
-                          delay: 1
-                        }}
-                        className="absolute top-0 max-sm:right-[-145px] right-[-50px] lg:right-[-1px] h-[410px] w-[1000px] rounded-[32px] rounded-br-none"
-                    >
+                    <motion.div className="absolute top-0 max-sm:right-[-145px] right-[-50px] lg:right-[-1px] h-[410px] w-[1000px] rounded-[32px] rounded-br-none">
                         <Image
                             src="/images/Banner1ladder.png"
                             alt="Image"
                             width={1920}
                             height={1080}
                             className="absolute w-full object-cover object-[center_-200px]"
-                            unoptimized
                         />
                     </motion.div>
+                    <Image
+                        src="/images/Banner1ladder.png"
+                        alt="Image"
+                        width={1920}
+                        height={1080}
+                        className="hidden absolute w-full object-cover object-[center_-200px]"
+                        unoptimized
+                    />
                     <div className="absolute top-[22%] left-[60px] flex flex-col justify-center text-white rounded-[10px] p-[5px] z-20 overflow-hidden">
                         {/* //////////////1.1 */}
                         <motion.div className="relative overflow-hidden flex flex-col">
@@ -45,6 +55,7 @@ const Banner = () => {
                                 animate={{ y: 0 }}
                                 transition={{
                                     duration: 1,
+                                    delay: 0.5,
                                     ease: [0.22, 1, 0.36, 1]
                                 }}
                                 viewport={{ once: true }}
@@ -60,7 +71,7 @@ const Banner = () => {
                                 animate={{ y: 0 }}
                                 transition={{
                                     duration: 1,
-                                    delay: 0.2,
+                                    delay: 0.7,
                                     ease: [0.22, 1, 0.36, 1]
                                 }}
                                 viewport={{ once: true }}
@@ -75,7 +86,7 @@ const Banner = () => {
                                 animate={{ y: 0 }}
                                 transition={{
                                     duration: 1,
-                                    delay: 0.4,
+                                    delay: 0.9,
                                     ease: [0.22, 1, 0.36, 1]
                                 }}
                                 viewport={{ once: true }}
@@ -90,7 +101,7 @@ const Banner = () => {
                                 animate={{ y: 0 }}
                                 transition={{
                                     duration: 1,
-                                    delay: 0.6,
+                                    delay: 1.1,
                                     ease: [0.22, 1, 0.36, 1]
                                 }}
                                 viewport={{ once: true }}
@@ -114,7 +125,7 @@ const Banner = () => {
                             animate={{ opacity: 1 }}
                             transition={{
                                 duration: 1,
-                                delay: 0.7,
+                                delay: 1.2,
                                 ease: [0.22, 1, 0.36, 1]
                             }}
                             viewport={{ once: true }}
@@ -129,7 +140,7 @@ const Banner = () => {
                             animate={{ opacity: 1 }}
                             transition={{
                                 duration: 1,
-                                delay: 0.7,
+                                delay: 1.2,
                                 ease: [0.22, 1, 0.36, 1]
                             }}
                             viewport={{ once: true }}
