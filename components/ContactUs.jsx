@@ -24,7 +24,7 @@ const ContactUs = () => {
     }, []);
 
     const isInView = useInView(ref, {
-        margin: mobileView ? '0% 0px 0% 0px' : '-30% 0px -30% 0px'
+        margin: mobileView ? '0% 0px 0% 0px' : '-50% 0px -50% 0px'
     });
 
     return (

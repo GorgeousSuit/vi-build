@@ -3,6 +3,7 @@
 import Image from '@node_modules/next/image';
 import { motion, useInView } from 'framer-motion';
 import { useRef, useState, useEffect } from 'react';
+import Link from '@node_modules/next/link';
 
 const DescriptionBanner = () => {
     const ref = useRef(null);
@@ -80,20 +81,22 @@ const DescriptionBanner = () => {
                         <br className="max-sm:hidden" /> renovation project at a
                         time with precision and creativity.
                     </motion.span>
-                    <motion.button
-                        ref={ref}
-                        initial={{ opacity: 0 }}
-                        animate={isInView && { opacity: 1 }}
-                        transition={{
-                            duration: 2,
-                            delay: 0.7,
-                            ease: [0.22, 1, 0.36, 1]
-                        }}
-                        viewport={{ once: true }}
-                        className="px-[35px] py-[10px] w-[150px] text-white bg-primary2 rounded-lg text-nowrap btn"
-                    >
-                        Contact Us
-                    </motion.button>
+                    <Link href="/gallery">
+                        <motion.button
+                            ref={ref}
+                            initial={{ opacity: 0 }}
+                            animate={isInView && { opacity: 1 }}
+                            transition={{
+                                duration: 2,
+                                delay: 0.7,
+                                ease: [0.22, 1, 0.36, 1]
+                            }}
+                            viewport={{ once: true }}
+                            className="px-[35px] py-[10px] w-[175px] text-white bg-primary2 rounded-lg text-nowrap btn"
+                        >
+                            Go To Gallery
+                        </motion.button>
+                    </Link>
                 </div>
             </div>
         </section>

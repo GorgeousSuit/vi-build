@@ -17,7 +17,7 @@ const ServiceItem = ({ title, description, Icon, index }) => {
     }, []);
 
     const isInView = useInView(ref, {
-        margin: mobileView ? '0% 0px 0% 0px' : '-0% 0px -0% 0px'
+        margin: mobileView ? '0% 0px 0% 0px' : '20% 0px 20% 0px'
     });
 
     const margin =

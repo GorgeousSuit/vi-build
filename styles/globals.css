@@ -14,11 +14,18 @@
 
 /* Tailwind Styles */
 .btn {
-    @apply sm:hover:bg-[#4A4A4A] sm:hover:border-[#4A4A4A] sm:hover:text-white active:text-[#D4A373] active:bg-[#1E1E1E] ease-linear duration-[0.05s] sm:hover:scale-[1.06] active:translate-y-1;
+    @apply sm:hover:bg-[#4A4A4A] sm:hover:border-[#4A4A4A] sm:hover:text-white active:text-[#D4A373] active:bg-[#1E1E1E] ease-linear duration-[0.05s] sm:hover:scale-[1.06] active:translate-y-1 font-bold;
+}
+
+.hover-underline-black {
+    @apply after:absolute after:bottom-[-2px] after:left-0 after:block after:w-full after:bg-[#2B3136] after:h-[2px] after:scale-x-0 after:transition-transform after:duration-300 after:ease-in-out after:hover:scale-x-100 after:origin-left
+}
+.hover-underline-black-reverse {
+    @apply after:absolute after:bottom-[-2px] after:left-0 after:block after:w-full after:bg-[#2B3136] after:h-[2px] after:scale-x-0 after:transition-transform after:duration-300 after:ease-in-out after:hover:scale-x-100 after:origin-right
 }
 
 .txt {
-    @apply hover:text-[#2B3136] active:text-[#D4A373] ease-linear duration-[0.05s] hover:scale-[1.06] active:scale-[0.95];
+    @apply hover:text-[#2B3136] active:text-[#D4A373] ease-linear duration-[0.05s] hover:scale-[1] active:scale-[0.95];
 }
 
 .flex-center {

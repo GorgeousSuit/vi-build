@@ -5,7 +5,7 @@ import { motion, useInView } from 'framer-motion';
 
 const Banner = () => {
     return (
-        <section className="pt-[60px] pb-[80px] relative flex justify-center mt-[110px] overflow-hidden px-[12px] sm:px-[24px] lg:px-[32px]">
+        <section className="pt-[30px] pb-[80px] relative flex justify-center mt-[110px] overflow-hidden px-[12px] sm:px-[24px] lg:px-[32px]">
             <div className="w-full h-[410px] max-w-[1000px] rounded-[32px] rounded-br-none border border-primary relative ">
                 <div className="w-[calc-(100%-24px)] lg:w-full h-full overflow-hidden rounded-[32px] rounded-br-none ">
                     <Image

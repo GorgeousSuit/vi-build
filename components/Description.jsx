@@ -3,6 +3,7 @@
 import Image from '@node_modules/next/image';
 import { motion, useInView } from 'framer-motion';
 import { useRef, useState, useEffect } from 'react';
+import { usePathname, useRouter } from 'next/navigation';
 
 const Description = () => {
     const ref = useRef(null);
@@ -20,6 +21,12 @@ const Description = () => {
     const isInView = useInView(ref, {
         margin: mobileView ? '50% 0px 50% 0px' : '-40% 0px -40% 0px'
     });
+
+    const scrollToContact = () => {
+        document
+            .getElementById('ContactUs')
+            ?.scrollIntoView({ behavior: 'smooth' });
+    };
 
     return (
         <section className="w-[100%] xl:h-[550px] pb-[60px] relative flex max-xl:flex-col justify-between px-[12px] sm:px-[24px] lg:px-[32px]">
@@ -97,7 +104,7 @@ const Description = () => {
                     reflect your style, enhance your comfort, and elevate your
                     everyday living experience.
                 </motion.span>
-                <div className="relative overflow-hidden flex flex-col">
+                <div className="relative overflow-hidden flex flex-col p-[4px]">
                     <motion.div
                         ref={ref}
                         initial={{ y: -75 }}
@@ -109,7 +116,10 @@ const Description = () => {
                         }}
                         viewport={{ once: true }}
                     >
-                        <button className="px-6 py-3 w-36 text-white bg-primary2 rounded-lg">
+                        <button
+                            onClick={scrollToContact}
+                            className="px-6 py-3 w-36 text-white bg-primary2 rounded-lg btn"
+                        >
                             Contact Us
                         </button>
                     </motion.div>
