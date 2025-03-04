@@ -3,10 +3,24 @@
 import Logo from '/public/logo/LogoBlack.svg';
 import { useState, useEffect } from 'react';
 import Link from '@node_modules/next/link';
+import { usePathname, useRouter } from "next/navigation";
 
 const Nav = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [isScrolled, setIsScrolled] = useState(false);
+
+
+    const pathname = usePathname();
+    const router = useRouter();
+
+    const handleClick = () => {
+        if (pathname === "/") {
+            document.getElementById("ContactUs")?.scrollIntoView({ behavior: "smooth" });
+        } else {
+            router.push("/#ContactUs");
+        }
+    };
+
 
     useEffect(() => {
         const handleScroll = () => {
@@ -16,6 +30,12 @@ const Nav = () => {
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
+
+    const scrollToContact = () => {
+        document
+            .getElementById('ContactUs')
+            ?.scrollIntoView({ behavior: 'smooth' });
+    };
 
     return (
         <nav
@@ -49,7 +69,12 @@ const Nav = () => {
                 >
                     <li className="px-3 py-3 lg:p-0">
                         <Link href="/" className="block txt">
-                            Home
+                            <button
+                                className="uppercase"
+                                onClick={() => setIsOpen(false)}
+                            >
+                                Home
+                            </button>
                         </Link>
                     </li>
                     <li className="px-3 py-3 lg:p-0">
@@ -57,20 +82,30 @@ const Nav = () => {
                             href="/gallery"
                             className="block txt lg:mx-[70px]"
                         >
-                            Gallery
+                            <button
+                                className="uppercase"
+                                onClick={() => setIsOpen(false)}
+                            >
+                                Gallery
+                            </button>
                         </Link>
                     </li>
-                    <Link href="#ContactUs">
-                        <button className="m-3 px-9 py-2.5 w-[150px] text-white bg-primary2 rounded-lg text-nowrap btn lg:hidden">
-                            Contact Us
-                        </button>
-                    </Link>
-                </ul>
-                <Link href="#ContactUs">
-                    <button className="px-9 py-2.5 w-[150px] text-white bg-primary2 rounded-lg text-nowrap btn max-lg:hidden">
+                    <button
+                        onClick={() => {
+                            handleClick();
+                            setIsOpen(false);
+                        }}
+                        className="m-3 px-9 py-2.5 w-[150px] text-white bg-primary2 rounded-lg text-nowrap btn lg:hidden"
+                    >
                         Contact Us
                     </button>
-                </Link>
+                </ul>
+                <button
+                onClick={() => handleClick}
+                    className="px-9 py-2.5 w-[150px] text-white bg-primary2 rounded-lg text-nowrap btn max-lg:hidden"
+                >
+                    Contact Us
+                </button>
             </div>
         </nav>
     );
