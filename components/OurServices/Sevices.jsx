@@ -1,4 +1,7 @@
-import Image from '@node_modules/next/image';
+'use client';
+
+import { motion, useInView } from 'framer-motion';
+import { useRef, useState, useEffect } from 'react';
 import ServiceItem from '@components/OurServices/ServiceItem.jsx';
 import FirstIcon from '/public/images/OurServices/1.svg';
 import SecondIcon from '/public/images/OurServices/2.svg';

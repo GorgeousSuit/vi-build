@@ -10,9 +10,9 @@ const Description = () => {
 
     useEffect(() => {
         const handleResize = () => {
-            setMobileView(window.innerWidth <= 768);
+            setMobileView(window.innerWidth <= 1280);
         };
-        handleResize(); // Initial check
+        handleResize();
         window.addEventListener('resize', handleResize);
         return () => window.removeEventListener('resize', handleResize);
     }, []);
@@ -61,7 +61,7 @@ const Description = () => {
                             alt="Logo"
                             width={120}
                             height={120}
-                            className="w-24 mb-[-10px]"
+                            className="w-24 mb-[-10px] mt-[-20px]"
                             unoptimized
                         />
                     </motion.div>
