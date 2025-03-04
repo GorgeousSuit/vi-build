@@ -10,7 +10,7 @@ import { FaFacebookF } from 'react-icons/fa';
 
 const ContactUs = () => {
     return (
-        <div className="w-full md:px-12 bg-gray-100 font-nunito text-primary2 px-[12px] sm:px-[24px] lg:px-[32px]">
+        <div className="w-full md:px-12 bg-gray-100 font-nunito text-primary2">
             <div className="max-w-6xl mx-auto flex flex-wrap">
                 <div className="w-full lg:w-7/12 border-b-2 lg:border-r-2 lg:border-b-0 border-gray-400 p-6 lg:p-8">
                     <form className="space-y-6">

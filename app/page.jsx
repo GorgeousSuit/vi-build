@@ -13,9 +13,13 @@ const Home = () => {
             <Hero />
             <Description />
             <DescriptionBanner />
+            <div className="px-[12px] sm:px-[24px] lg:px-[32px]">
+                <Testimony />
+            </div>
             <Services />
-            <Testimony />
-            <ContactUs />
+            <div className="px-[12px] sm:px-[24px] lg:px-[32px]">
+                <ContactUs />
+            </div>
             <Footer />
         </div>
     );

@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 const Testimonial = () => {
     return (
-        <div className="bg-gray-100 p-8 md:p-12 rounded-2xl shadow-lg max-w-3xl mx-auto px-[12px] sm:px-[24px] lg:px-[32px]">
+        <div className="bg-gray-100 p-8 md:p-12 rounded-2xl shadow-lg max-w-3xl mx-auto">
             <div className="flex items-center gap-6">
                 <div className="w-24 h-24 relative">
                     <Image
