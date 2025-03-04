@@ -114,7 +114,7 @@ const Banner = () => {
                             animate={{ opacity: 1 }}
                             transition={{
                                 duration: 1,
-                                delay: 0.5,
+                                delay: 0.7,
                                 ease: [0.22, 1, 0.36, 1]
                             }}
                             viewport={{ once: true }}
@@ -129,7 +129,7 @@ const Banner = () => {
                             animate={{ opacity: 1 }}
                             transition={{
                                 duration: 1,
-                                delay: 0.5,
+                                delay: 0.7,
                                 ease: [0.22, 1, 0.36, 1]
                             }}
                             viewport={{ once: true }}
