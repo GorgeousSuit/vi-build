@@ -10,7 +10,9 @@ const ProjectDetail = () => {
     const project = projects.find((p) => p.id === id);
 
     if (!project) {
-        return <div className="text-center text-red-500">Project not found.</div>;
+        return (
+            <div className="text-center text-red-500">Project not found.</div>
+        );
     }
 
     const [selectedImage, setSelectedImage] = useState(project.images[0]);
@@ -19,9 +21,9 @@ const ProjectDetail = () => {
         <div className="max-w-6xl mx-auto px-4 py-8 mt-[110px]">
             <button
                 onClick={() => window.history.back()}
-                className="mb-4 text-blue-500 hover:underline"
+                className="mb-4 text-white btn bg-primary2 p-[10px] rounded-[10px]"
             >
-                Back to Gallery
+                ↩ Back to Gallery
             </button>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div>
@@ -30,7 +32,7 @@ const ProjectDetail = () => {
                         alt="Project Image"
                         width={800}
                         height={600}
-                        className="w-full h-auto rounded-lg"
+                        className="w-full h-auto max-h-[408px] object-cover rounded-lg"
                     />
                     <div className="flex space-x-2 mt-4">
                         {project.images.map((img, index) => (
@@ -40,8 +42,10 @@ const ProjectDetail = () => {
                                 alt="Thumbnail"
                                 width={100}
                                 height={75}
-                                className={`cursor-pointer rounded-lg ${
-                                    selectedImage === img ? 'border-2 border-blue-500' : ''
+                                className={`cursor-pointer rounded-lg object-cover max-h-[70px] ${
+                                    selectedImage === img
+                                        ? 'border-2 border-secondary1'
+                                        : ''
                                 }`}
                                 onClick={() => setSelectedImage(img)}
                             />
@@ -49,12 +53,43 @@ const ProjectDetail = () => {
                     </div>
                 </div>
                 <div>
-                    <h1 className="text-3xl font-bold">Project #{project.id}</h1>
-                    <p className="mt-2 text-gray-600">Layout: {project.layout}</p>
-                    <p className="text-gray-600">Size: {project.size}</p>
-                    <p className="text-gray-600">Building Type: {project.type}</p>
-                    <p className="text-gray-600">Location: {project.location}</p>
-                    <p className="text-gray-600">Cost: {project.cost}</p>
+                    <h1 className="text-[40px] font-bold max-md:text-center">
+                        Project «{project.name}»
+                    </h1>
+                    <div className="space-y-[20px] text-[20px] text-primary2 mt-[30px]">
+                        <div className="border-t-[1px] border-background border-dotted p-[15px] flex justify-between">
+                            <p className="text-primary">
+                                Layout:
+                            </p>
+                            <p className="font-bold">
+                               {project.layout}
+                            </p>
+                        </div>
+                        <div className="border-t-[1px] border-background border-dotted p-[15px] flex justify-between">
+                            <p className="text-primary">Size:</p>
+                            <p className="font-bold">{project.size}</p>
+                        </div>
+                        <div className="border-t-[1px] border-background border-dotted p-[15px] flex justify-between">
+                            <p className="text-primary">
+                                Building Type:
+                            </p>
+                            <p className="font-bold">
+                               {project.type}
+                            </p>
+                        </div>
+                        <div className="border-t-[1px] border-background border-dotted p-[15px] flex justify-between">
+                            <p className="text-primary">
+                                Location:
+                            </p>
+                            <p className="font-bold">
+                                {project.location}
+                            </p>
+                        </div>
+                        <div className="border-t-[1px] border-background border-dotted p-[15px] flex justify-between">
+                            <p className="text-primary">Cost:</p>
+                            <p className="font-bold">{project.cost}</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

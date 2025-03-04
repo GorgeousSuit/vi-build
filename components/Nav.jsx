@@ -66,7 +66,6 @@ const Nav = () => {
                     <motion.ul
                     initial={{ scaleY:0, originY: 0}}
                         animate={{ scaleY:1, originY: 0}}
-                        useInView
                         transition={{
                             duration: 0.3,
                             ease: [0.22, 1, 0.36, 1]
@@ -80,7 +79,7 @@ const Nav = () => {
                         <li className="px-3 py-3 lg:p-0">
                             <Link href="/" className="block relative">
                                 <button
-                                    className="uppercase txt sm:hover-underline-black-reverse"
+                                    className="uppercase hover-underline-black-reverse"
                                     onClick={() => setIsOpen(false)}
                                 >
                                     Home
@@ -90,7 +89,7 @@ const Nav = () => {
                         <li className="px-3 py-3 lg:p-0">
                             <Link href="/gallery" className="block relative">
                                 <button
-                                    className="uppercase sm:hover-underline-black"
+                                    className="uppercase hover-underline-black"
                                     onClick={() => setIsOpen(false)}
                                 >
                                     Gallery
@@ -114,9 +113,9 @@ const Nav = () => {
                         } lg:block absolute lg:static top-20 right-0 w-full bg-white`}
                     >
                         <li className="px-3 py-3 lg:p-0">
-                            <Link href="/" className="block relative">
+                            <Link href="/" className="block relative txt">
                                 <button
-                                    className="uppercase txt sm:hover-underline-black-reverse"
+                                    className="uppercase hover-underline-black-reverse"
                                     onClick={() => setIsOpen(false)}
                                 >
                                     Home
@@ -124,9 +123,9 @@ const Nav = () => {
                             </Link>
                         </li>
                         <li className="px-3 py-3 lg:p-0">
-                            <Link href="/gallery" className="block relative">
+                            <Link href="/gallery" className="block relative txt">
                                 <button
-                                    className="uppercase sm:hover-underline-black"
+                                    className="uppercase hover-underline-black"
                                     onClick={() => setIsOpen(false)}
                                 >
                                     Gallery
