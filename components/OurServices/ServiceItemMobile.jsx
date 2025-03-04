@@ -35,7 +35,7 @@ const ServiceItem = ({ title, description, Icon, index }) => {
         <motion.div className="max-lg:flex max-lg:justify-center ">
                 <motion.div
                     ref={ref}
-                    initial={{ opacity: 0, x: index % 2 === 0 ? 415 : -415 }}
+                    initial={{ opacity: 0, x: index % 2 === 0 ? 300 : -300 }}
                     animate={isInView && { opacity: 1, x: 0 }}
                     transition={{
                         duration: 1,
