@@ -24,7 +24,7 @@ const ContactUs = () => {
     }, []);
 
     const isInView = useInView(ref, {
-        margin: mobileView ? '0% 0px 0% 0px' : '-50% 0px -50% 0px'
+        margin: mobileView ? '0% 0px 0% 0px' : '-40% 0px -40% 0px'
     });
 
     return (
@@ -35,7 +35,7 @@ const ContactUs = () => {
                 initial={{opacity: 0,x: 100 }}
                 animate={isInView && {opacity: 1, x: 0 }}
                 transition={{
-                    duration: 1,
+                    duration: 2,
                     ease: [0.22, 1, 0.36, 1]
                 }}
                 viewport={{ once: true }}

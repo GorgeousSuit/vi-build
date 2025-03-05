@@ -1,3 +1,9 @@
+"use client"
+
+import { useState, useEffect } from 'react';
+import Loader from '@components/Loaders/Loader.jsx';
+import Preloader from '@components/Loaders/Preloader.jsx';
+
 import Image from 'next/image';
 import Hero from '@components/Hero';
 import Description from '@components/Description';
@@ -8,8 +14,15 @@ import ContactUs from '@components/ContactUs';
 import Footer from '@components/Footer';
 
 const Home = () => {
-    return (
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        setTimeout(() => setLoading(false), 500);
+    }, []);
+
+    return loading ? <Loader /> : (
         <div className="absolute w-[calc(100vw)] space-y-[90px] lg:space-y-[160px] text-primary2 overflow-x-hidden">
+            <Preloader />
             <Hero />
             <Description />
             <DescriptionBanner />

@@ -13,10 +13,6 @@ const Banner = () => {
         setTimeout(() => setLoading(false), 500);
     }, []);
 
-    if (loading) {
-        return <Loader />;
-      }
-
     return (
         <section className="pt-[30px] pb-[80px] relative flex justify-center mt-[110px] overflow-hidden px-[12px] sm:px-[24px] lg:px-[32px]">
             <Preloader />
