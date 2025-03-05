@@ -13,7 +13,7 @@ const loading = () => {
                 duration: 1,
                 ease: [0.22, 1, 0.36, 1]
             }}
-            className="fixed inset-0 flex items-center justify-center bg-white h-screen z-[100]"
+            className="fixed inset-0 flex items-center justify-center bg-white h-[100svh] z-[100]"
         >
           <Image
            src="/logo/Main black logo.png"
