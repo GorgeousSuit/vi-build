@@ -19,7 +19,7 @@ const Description = () => {
     }, []);
 
     const isInView = useInView(ref, {
-        margin: mobileView ? '50% 0px 50% 0px' : '-40% 0px -40% 0px'
+        margin: mobileView ? '50% 0px 50% 0px' : '-20% 0px -20% 0px'
     });
 
     const scrollToContact = () => {
@@ -41,7 +41,7 @@ const Description = () => {
                 viewport={{ once: true }}
             >
                 <Image
-                    src="/images/About/Worker.JPG"
+                    src="/images/About/Banner2.jpg"
                     alt="Image"
                     width={450}
                     height={350}
@@ -137,11 +137,11 @@ const Description = () => {
                 className="place-self-end"
             >
                 <Image
-                    src="/images/About/Banner2.jpg"
+                    src="/images/About/Building.jpg"
                     alt="Image"
                     width={450}
                     height={350}
-                    className="w-72 h-56 md:w-[450px] md:h-[350px] rounded-l-3xl object-cover border border-primary"
+                    className="w-72 h-56 md:w-[450px] md:h-[350px] rounded-l-3xl object-cover border border-primary object-right"
                     unoptimized
                 />
             </motion.div>
