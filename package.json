@@ -9,6 +9,8 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@sanity/image-url": "1",
+    "@sanity/vision": "3",
     "@svgr/webpack": "^8.1.0",
     "autoprefixer": "latest",
     "bcrypt": "latest",
@@ -19,11 +21,14 @@
     "mongoose": "latest",
     "next": "^15.0.3",
     "next-auth": "latest",
+    "next-sanity": "^9.8.58-canary.0",
     "postcss": "latest",
     "react": "latest",
     "react-dom": "latest",
     "react-icons": "^5.5.0",
     "react-scroll-parallax": "latest",
+    "sanity": "3",
+    "styled-components": "6",
     "tailwindcss": "latest",
     "three": "latest"
   }

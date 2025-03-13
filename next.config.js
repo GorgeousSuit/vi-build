@@ -24,5 +24,14 @@ module.exports = {
         fileLoaderRule.exclude = /\.svg$/i;
 
         return config;
-    }
+    },
+    images: {
+        remotePatterns: [
+          {
+            protocol: 'https',
+            hostname: 'cdn.sanity.io',
+            port: '',
+          },
+        ],
+      },
 };

@@ -137,11 +137,11 @@ const Description = () => {
                 className="place-self-end"
             >
                 <Image
-                    src="/images/About/Building.jpg"
+                    src="/images/About/IMG_0861.jpg"
                     alt="Image"
                     width={450}
                     height={350}
-                    className="w-72 h-56 md:w-[450px] md:h-[350px] rounded-l-3xl object-cover border border-primary object-right"
+                    className="w-72 h-56 md:w-[450px] md:h-[350px] rounded-l-3xl object-cover border border-primary object-center"
                     unoptimized
                 />
             </motion.div>
