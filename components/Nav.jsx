@@ -37,10 +37,13 @@ const Nav = () => {
             .getElementById('ContactUs')
             ?.scrollIntoView({ behavior: 'smooth' });
     };
+    
+    const isAdminRoute = pathname.startsWith("/admin");
+    const isGalleryRoute = pathname.startsWith("/gallery/project");
 
     return (
         <nav
-            className={`fixed top-0 left-0 z-50 w-full bg-white font-bold text-primary2 px-3 sm:px-6 lg:px-8 transition-shadow duration-300 ${
+            className={`${isAdminRoute && "hidden"} fixed top-0 left-0 z-50 w-full bg-white font-bold text-primary2 px-3 sm:px-6 lg:px-8 transition-shadow duration-300 ${
                 isScrolled ? 'shadow-md' : ''
             }`}
         >
@@ -48,7 +51,12 @@ const Nav = () => {
                 <Link href="/" className="text-2xl font-bold uppercase">
                     <Logo className="w-[100px] h-[100px] my-[-20px] ease-linear duration-[0.05s] sm:hover:scale-[1.06]" />
                 </Link>
-
+            <button
+                onClick={() => window.history.back()}
+                className={`${isGalleryRoute ? "block sm:hidden" : "hidden "} mb-1 text-white btn bg-primary2 p-[10px] rounded-[10px] mr-[30px]`}
+            >
+                Back to Gallery
+            </button>
                 {/* Hamburger Button */}
                 <button
                     className="block lg:hidden focus:outline-none"

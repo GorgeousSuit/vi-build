@@ -1,88 +1,117 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Image from 'next/image';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Pagination } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 
+const GalleryDetails = ({ project }) => {
+    const [selectedImage, setSelectedImage] = useState(project.images[0].url);
+    const [isMobile, setIsMobile] = useState(false);
 
-const GalleryDetails = ({project}) => {
-	const [selectedImage, setSelectedImage] = useState(project.images[0].url);
-  return (
-	<div className="max-w-6xl mx-auto px-4 py-8 mt-[110px]">
-	<button
-	    onClick={() => window.history.back()}
-	    className="mb-4 text-white btn bg-primary2 p-[10px] rounded-[10px]"
-	>
-	    ↩ Back to Gallery
-	</button>
-	<div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-	    <div>
-		   <Image
-			  src={selectedImage}
-			  alt="Project Image"
-			  width={800}
-			  height={600}
-			  className="w-full h-auto max-h-[408px] object-cover rounded-lg"
-		   />
-		   <div className="flex space-x-2 mt-4">
-			  {project.images.map((img, index) => (
-				 <Image
-					key={index}
-					src={img.url}
-					alt="Thumbnail"
-					width={100}
-					height={75}
-					className={`cursor-pointer rounded-lg object-cover max-h-[70px] ${
-					    selectedImage === img
-						   ? 'border-2 border-secondary1'
-						   : ''
-					}`}
-					onClick={() => setSelectedImage(img.url)}
-				 />
-			  ))}
-		   </div>
-	    </div>
-	    <div>
-		   <h1 className="text-[40px] font-bold max-md:text-center">
-			  Project «{project.name}»
-		   </h1>
-		   <div className="space-y-[20px] text-[20px] text-primary2 mt-[30px]">
-			  <div className="border-t-[1px] border-background border-dotted p-[15px] flex justify-between">
-				 <p className="text-primary">
-					Layout:
-				 </p>
-				 <p className="font-bold">
-				    {project.layout}
-				 </p>
-			  </div>
-			  <div className="border-t-[1px] border-background border-dotted p-[15px] flex justify-between">
-				 <p className="text-primary">Size:</p>
-				 <p className="font-bold">{project.size}</p>
-			  </div>
-			  <div className="border-t-[1px] border-background border-dotted p-[15px] flex justify-between">
-				 <p className="text-primary">
-					Building Type:
-				 </p>
-				 <p className="font-bold">
-				    {project.type}
-				 </p>
-			  </div>
-			  <div className="border-t-[1px] border-background border-dotted p-[15px] flex justify-between">
-				 <p className="text-primary">
-					Location:
-				 </p>
-				 <p className="font-bold">
-					{project.location}
-				 </p>
-			  </div>
-			  <div className="border-t-[1px] border-background border-dotted p-[15px] flex justify-between">
-				 <p className="text-primary">Cost:</p>
-				 <p className="font-bold">{project.cost}</p>
-			  </div>
-		   </div>
-	    </div>
-	</div>
- </div>
-  )
-}
+    useEffect(() => {
+        const checkScreenSize = () => setIsMobile(window.innerWidth < 768);
+        checkScreenSize();
+        window.addEventListener('resize', checkScreenSize);
+        return () => window.removeEventListener('resize', checkScreenSize);
+    }, []);
 
-export default GalleryDetails
+    return (
+        <div className="max-w-6xl mx-auto px-4 py-8 sm:mt-[110px] mt-[70px]">
+            
+		  <button
+                onClick={() => window.history.back()}
+                className="max-sm:hidden mb-4 text-white btn bg-primary2 p-[10px] rounded-[10px]"
+            >
+                ↩ Back to Gallery
+            </button>
+		  <h1 className="sm:hidden text-[29px] font-bold max-md:text-center mb-[10px]">
+                        Project  «{project.name}»
+                    </h1>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                {/* Image Slider (Mobile) */}
+                {isMobile ? (
+                    <Swiper
+                        modules={[Navigation, Pagination]}
+                        navigation
+                        pagination={{ clickable: true }}
+                        className="w-full max-h-[408px] rounded-lg"
+                    >
+                        {project.images.map((img, index) => (
+                            <SwiperSlide key={index}>
+                                <Image
+                                    src={img.url}
+                                    alt={`Project Image ${index + 1}`}
+                                    width={800}
+                                    height={600}
+                                    className="max-w-full h-full sm:max-lg:h-[39.84vw] lg:max-h-[408px] object-cover rounded-lg "
+                                    unoptimized
+                                />
+                            </SwiperSlide>
+                        ))}
+                    </Swiper>
+                ) : (
+                    /* Static Image & Thumbnails (Desktop) */
+                    <div>
+                        <Image
+                            src={selectedImage}
+                            alt="Project Image"
+                            width={800}
+                            height={600}
+                            className="w-full h-full max-h-[408px] object-cover rounded-lg"
+                        />
+                        <div className="flex space-x-2 mt-4">
+                            {project.images.map((img, index) => (
+                                <Image
+                                    key={index}
+                                    src={img.url}
+                                    alt="Thumbnail"
+                                    width={100}
+                                    height={75}
+                                    className={`cursor-pointer rounded-lg object-cover max-h-[70px] ${
+                                        selectedImage === img.url
+                                            ? 'border-2 border-secondary1'
+                                            : ''
+                                    }`}
+                                    onClick={() => setSelectedImage(img.url)}
+                                />
+                            ))}
+                        </div>
+                    </div>
+                )}
+
+                {/* Project Details */}
+                <div>
+                    <h1 className="max-sm:hidden text-[40px] font-bold max-md:text-center">
+                        Project  «{project.name}»
+                    </h1>
+                    <div className="space-y-[20px] text-[16px] text-primary2 mt-[30px] mb-[30px]">
+                        {[
+                            ['Layout', project.layout],
+                            ['Size', project.size],
+                            ['Building Type', project.type],
+                            ['Location', project.location],
+                            ['Cost', project.cost]
+                        ].map(([label, value], index) => (
+                            <div
+                                key={label}
+                                className={`p-[15px] flex justify-between border-background border-dotted ${
+                                    index !== 0 ? 'border-t-[1px]' : ''
+                                }`}
+                            >
+                                <p className="text-primary">{label}:</p>
+                                <p className="font-bold">{value}</p>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </div>
+        </div>
+    );
+};
+
+export default GalleryDetails;

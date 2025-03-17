@@ -3,13 +3,23 @@
 @tailwind utilities;
 
 @layer utilities {
-        ::-webkit-scrollbar {
-            display: none;
-        }
-        :root {
-            -ms-overflow-style: none;
-            scrollbar-width: none;
-        }
+    ::-webkit-scrollbar {
+        display: none;
+    }
+    :root {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+}
+
+:root {
+    --swiper-navigation-color: #D4A373; /* Change arrow color */
+}
+
+:root {
+    --swiper-pagination-color: #D4A373; /* Active dot */
+    --swiper-pagination-bullet-inactive-color: #ccc; /* Inactive dots */
+    --swiper-pagination-bullet-inactive-opacity: 0.5;
 }
 
 /* Tailwind Styles */
@@ -18,10 +28,10 @@
 }
 
 .hover-underline-black {
-    @apply after:absolute after:bottom-[-2px] after:left-0 after:block after:w-full after:bg-[#2B3136] after:h-[2px] after:scale-x-0 after:transition-transform after:duration-300 after:ease-in-out after:hover:scale-x-100 after:origin-left
+    @apply after:absolute after:bottom-[-2px] after:left-0 after:block after:w-full after:bg-[#2B3136] after:h-[2px] after:scale-x-0 after:transition-transform after:duration-300 after:ease-in-out after:hover:scale-x-100 after:origin-left;
 }
 .hover-underline-black-reverse {
-    @apply after:absolute after:bottom-[-2px] after:left-0 after:block after:w-full after:bg-[#2B3136] after:h-[2px] after:scale-x-0 after:transition-transform after:duration-300 after:ease-in-out after:hover:scale-x-100 after:origin-right
+    @apply after:absolute after:bottom-[-2px] after:left-0 after:block after:w-full after:bg-[#2B3136] after:h-[2px] after:scale-x-0 after:transition-transform after:duration-300 after:ease-in-out after:hover:scale-x-100 after:origin-right;
 }
 
 .txt {
