@@ -4,6 +4,8 @@ import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination } from 'swiper/modules';
+import ImageLoader from '@components/Loaders/ImageLoader';
+import SmallImageLoader from '@components/Loaders/SmallImageLoader.jsx';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
@@ -19,18 +21,19 @@ const GalleryDetails = ({ project }) => {
         return () => window.removeEventListener('resize', checkScreenSize);
     }, []);
 
+    const [isLoading, setIsLoading] = useState(true);
+
     return (
         <div className="max-w-6xl mx-auto px-4 py-8 sm:mt-[110px] mt-[70px]">
-            
-		  <button
+            <button
                 onClick={() => window.history.back()}
                 className="max-sm:hidden mb-4 text-white btn bg-primary2 p-[10px] rounded-[10px]"
             >
                 ↩ Back to Gallery
             </button>
-		  <h1 className="sm:hidden text-[29px] font-bold max-md:text-center mb-[10px]">
-                        Project  «{project.name}»
-                    </h1>
+            <h1 className="sm:hidden text-[29px] font-bold max-md:text-center mb-[10px]">
+                Project «{project.name}»
+            </h1>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 {/* Image Slider (Mobile) */}
@@ -57,29 +60,45 @@ const GalleryDetails = ({ project }) => {
                 ) : (
                     /* Static Image & Thumbnails (Desktop) */
                     <div>
-                        <Image
+                        <ImageLoader
                             src={selectedImage}
                             alt="Project Image"
                             width={800}
                             height={600}
                             className="w-full h-full max-h-[408px] object-cover rounded-lg"
                         />
+
                         <div className="flex space-x-2 mt-4">
-                            {project.images.map((img, index) => (
-                                <Image
-                                    key={index}
-                                    src={img.url}
-                                    alt="Thumbnail"
-                                    width={100}
-                                    height={75}
-                                    className={`cursor-pointer rounded-lg object-cover max-h-[70px] ${
-                                        selectedImage === img.url
-                                            ? 'border-2 border-secondary1'
-                                            : ''
-                                    }`}
-                                    onClick={() => setSelectedImage(img.url)}
-                                />
-                            ))}
+                            {project.images.map((img, index) =>
+                                <div key={index} className="">
+                                    {isLoading && (
+                                        <SmallImageLoader
+                                            key={index+"loader"}
+                                            src={img.url}
+                                            alt="Thumbnail"
+                                            width={100}
+                                            height={75}
+                                        />
+                                    )}
+                                        <Image
+                                            key={index}
+                                            src={img.url}
+                                            alt="Thumbnail"
+                                            width={100}
+                                            height={75}
+                                            onLoad={() => setIsLoading(false)}
+                                            className={`cursor-pointer rounded-lg object-cover max-h-[70px] ${
+                                                selectedImage === img.url
+                                                    ? 'border-2 border-secondary1'
+                                                    : ''
+                                            } ${isLoading ? 'invisible' : 'visible'}`}
+                                            onClick={() =>
+                                                setSelectedImage(img.url)
+                                            }
+                                        />
+                                </div>
+                                
+                            )}
                         </div>
                     </div>
                 )}
@@ -87,7 +106,7 @@ const GalleryDetails = ({ project }) => {
                 {/* Project Details */}
                 <div>
                     <h1 className="max-sm:hidden text-[40px] font-bold max-md:text-center">
-                        Project  «{project.name}»
+                        Project «{project.name}»
                     </h1>
                     <div className="space-y-[20px] text-[16px] text-primary2 mt-[30px] mb-[30px]">
                         {[
