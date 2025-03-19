@@ -1,15 +1,16 @@
-import Image from 'next/image';
-import { singleProjectQueryItem } from '@sanity/lib/queries.js';
 import { client } from '@sanity/lib/client.js';
+import { singleProjectQueryItem } from '@sanity/lib/queries.js';
 import GalleryDetails from '@components/Gallery/GalleryDetails';
 import Link from 'next/link';
 
-const ProjectDetail = async ({ params: promiseParams }) => {
-    const params = await promiseParams; // Await params
+export const revalidate = 60; // Revalidate every 60 seconds
 
-    if (!params?.slug) return null; // Ensure slug exists
+const getProject = async (slug) => {
+    return await client.fetch(singleProjectQueryItem, { slug });
+};
 
-    const project = await client.fetch(singleProjectQueryItem, { slug: params.slug });
+const ProjectDetail = async ({ params }) => {
+    const project = await getProject(params.slug);
 
     if (!project) {
         return (
