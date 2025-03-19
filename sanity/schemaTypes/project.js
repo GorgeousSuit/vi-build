@@ -26,7 +26,7 @@ export default defineType({
             name: 'images',
             title: 'Project Images',
             type: 'array',
-            of: [{ type: 'image' }]
+            of: [{ type: 'image' }],
         }),
         defineField({
             name: 'layout',

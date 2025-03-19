@@ -68,9 +68,9 @@ const GalleryDetails = ({ project }) => {
                             className="w-full h-full max-h-[408px] object-cover rounded-lg"
                         />
 
-                        <div className="flex space-x-2 mt-4">
+                        <div className="mt-4 grid grid-flow-col auto-cols-max gap-2 overflow-x-auto">
                             {project.images.map((img, index) =>
-                                <div key={index} className="">
+                                <div key={img._key || index} className="">
                                     {isLoading && (
                                         <SmallImageLoader
                                             key={index+"loader"}
