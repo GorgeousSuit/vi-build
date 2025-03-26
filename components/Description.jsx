@@ -11,7 +11,7 @@ const Description = () => {
 
     useEffect(() => {
         const handleResize = () => {
-            setMobileView(window.innerWidth <= 1280);
+            setMobileView(window.innerWidth <= 1024);
         };
         handleResize();
         window.addEventListener('resize', handleResize);
@@ -29,7 +29,7 @@ const Description = () => {
     };
 
     return (
-        <section className="w-[100%] xl:h-[550px] pb-[60px] relative flex max-xl:flex-col justify-between px-[12px] sm:px-[24px] lg:px-[32px]">
+        <section className="w-[100%] xl:h-[550px] pb-[60px] relative flex max-lg:flex-col justify-between px-[12px] sm:px-[24px] lg:px-[32px]">
             <motion.div
                 ref={ref}
                 initial={{ opacity: 0, x: -50 }}
@@ -45,7 +45,7 @@ const Description = () => {
                     alt="Image"
                     width={450}
                     height={350}
-                    className="w-72 h-56 md:w-[450px] md:h-[350px] rounded-r-3xl object-cover border border-primary"
+                    className="w-72 h-56 md:w-[450px] md:h-[350px] rounded-r-3xl object-cover border border-primary max-lg:object-center lg:object-[-200px_center] xl:object-[right_center]"
                     unoptimized
                 />
             </motion.div>
@@ -83,7 +83,7 @@ const Description = () => {
                             ease: [0.22, 1, 0.36, 1]
                         }}
                         viewport={{ once: true }}
-                        className="text-2xl md:text-4xl font-bold"
+                        className="text-2xl xl:text-4xl font-bold"
                     >
                         Crafting Spaces of Lasting Impressions
                     </motion.span>
@@ -98,7 +98,7 @@ const Description = () => {
                         ease: [0.22, 1, 0.36, 1]
                     }}
                     viewport={{ once: true }}
-                    className="text-sm md:text-base text-center"
+                    className="text-sm xl:text-base text-center"
                 >
                     Our passion is creating beautiful, functional spaces that
                     reflect your style, enhance your comfort, and elevate your
@@ -141,7 +141,7 @@ const Description = () => {
                     alt="Image"
                     width={450}
                     height={350}
-                    className="w-72 h-56 md:w-[450px] md:h-[350px] rounded-l-3xl object-cover border border-primary object-center"
+                    className="w-72 h-56 md:w-[450px] md:h-[350px] rounded-l-3xl object-cover border border-primary object-center lg:object-[-100px_center]  xl:object-center"
                     unoptimized
                 />
             </motion.div>
