@@ -229,7 +229,7 @@ const ContactUs = () => {
                         <div className="mt-6 space-y-6 text-primary2">
                             <div className="flex items-center">
                                 <FaPhoneAlt className="w-12 h-8 mr-4" />
-                                <p className="text-gray-500">+1495 1474</p>
+                                <p className="text-gray-500">+44 7448 623851<br />+44 7857 212533</p>
                             </div>
                             <div className="flex items-center">
                                 <IoMdMail className="w-12 h-8 mr-4" />
