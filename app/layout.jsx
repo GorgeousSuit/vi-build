@@ -30,7 +30,7 @@ const RootLayout = ({ children }) => {
                 />
                 <meta
                     property="og:image"
-                    content="public/logo/Main black logo.png"
+                    content="https://www.vibuildlondon.co.uk/public/logo/Main black logo.png"
                 />
                 <meta property="og:url" content="https://www.vibuildlondon.co.uk/" />
                 <meta property="og:type" content="website" />
