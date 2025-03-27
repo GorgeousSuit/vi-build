@@ -8,7 +8,7 @@ export const allProjectsQuery = `*[_type == "project"] | order(_createdAt desc) 
 	images
    }`;
 
-export const singleProjectQuery = `*[_type == "project" && defined(slug.current)] | order(_createdAt desc) {
+export const singleProjectQuery = `*[_type == "project" && defined(slug.current)] | order(order asc) {
 	_id,
 	name,
 	"slug": slug.current,

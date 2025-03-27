@@ -26,7 +26,7 @@ export default defineType({
             name: 'images',
             title: 'Project Images',
             type: 'array',
-            of: [{ type: 'image' }],
+            of: [{ type: 'image' }]
         }),
         defineField({
             name: 'layout',
@@ -52,6 +52,19 @@ export default defineType({
             name: 'cost',
             title: 'Cost',
             type: 'string'
+        }),
+        defineField({
+            name: 'order',
+            title: 'Order',
+            type: 'number',
+            description: 'Lower numbers appear first'
         })
+    ],
+    orderings: [
+        {
+            title: 'Custom Order',
+            name: 'customOrder',
+            by: [{ field: 'order', direction: 'asc' }]
+        }
     ]
 });
