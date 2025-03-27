@@ -25,6 +25,7 @@ const Banner = () => {
                         height={1080}
                         className="min-w-[1000px] max-sm:object-[calc(100vw-880px)_-200px] lg:w-full object-[calc(100vw-1000px)_-200px] min-[1000px]:object-[center_-200px]"
                         unoptimized
+                        priority
                     />
                     <motion.div className="absolute top-0 max-sm:right-[-145px] right-[-50px] lg:right-[-1px] h-[410px] w-[1000px] rounded-[32px] rounded-br-none">
                         <Image

@@ -29,12 +29,12 @@ const Description = () => {
     };
 
     return (
-        <section className="w-[100%] pb-[60px] relative flex max-lg:flex-col justify-center px-[12px] sm:px-[24px] lg:px-[32px]">
+        <section ref={ref} className="w-[100%] pb-[60px] relative flex max-lg:flex-col justify-center px-[12px] sm:px-[24px] lg:px-[32px]">
             
-            <div className=" absolute top-0 left-[50%] z-[-1] mr-[12px] sm:mr-[24px] lg:mr-[32px] overflow-hidden flex flex-col">
+            <div className="absolute top-0 left-[50%] z-[-1] mr-[12px] sm:mr-[24px] lg:mr-[32px] overflow-hidden flex flex-col">
                 <motion.div
                     ref={ref}
-                    initial={{ x: -20 }}
+                    initial={window.innerWidth <= 1024 ? { x: "-47vw" } : { x: -490 }}
                     animate={isInView && {x: 0 }}
                     transition={{
                         duration: 2,
@@ -49,7 +49,7 @@ const Description = () => {
                         width={450}
                         height={350}
                         className="w-full max-w-[500px] md:w-full h-[350px] rounded-r-3xl object-cover border border-primary object-center"
-                        unoptimized
+                        priority
                     />
                 </motion.div>
             </div>
@@ -133,7 +133,7 @@ const Description = () => {
             <div className="absolute top-0 right-[50%] z-[-1] ml-[12px] sm:ml-[24px] lg:ml-[32px] overflow-hidden flex flex-col">
                 <motion.div
                     ref={ref}
-                    initial={{ x: 20 }}
+                    initial={window.innerWidth <= 1024 ? { x: "47vw" } : { x: 490 }}
                     animate={isInView && {x: 0 }}
                     transition={{
                         duration: 2,
@@ -148,7 +148,7 @@ const Description = () => {
                         width={450}
                         height={350}
                         className="w-full max-w-[500px] md:w-full h-[350px] rounded-l-3xl object-cover border border-primary object-center"
-                        unoptimized
+                        priority
                     />
                 </motion.div>
             </div>
