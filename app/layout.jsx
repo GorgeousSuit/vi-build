@@ -1,8 +1,6 @@
 import '@styles/globals.css';
 import { Roboto } from 'next/font/google';
-
 import Nav from '@components/Nav';
-import Head from 'next/head';
 
 const roboto = Roboto({
     weight: ['400', '700'],
@@ -12,30 +10,29 @@ const roboto = Roboto({
 export const metadata = {
     title: 'VI-(BUILD)',
     description:
-        'Working together to breathe new life into your beloved spaces, one renovation project at a time with precision and creativity.'
+        'Working together to breathe new life into your beloved spaces, one renovation project at a time with precision and creativity.',
+    openGraph: {
+        title: 'VI-(BUILD)',
+        description:
+            'Working together to breathe new life into your beloved spaces, one renovation project at a time with precision and creativity.',
+        url: 'https://www.vibuildlondon.co.uk/',
+        siteName: 'VI-(BUILD)',
+        images: [
+            {
+                url: 'https://www.vibuildlondon.co.uk/og-image.png', // Corrected path
+                width: 1200,
+                height: 630,
+                alt: 'VI-(BUILD) Logo'
+            }
+        ],
+        type: 'website'
+    }
 };
 
 const RootLayout = ({ children }) => {
     return (
-        <html lang="en" className="">
-            <Head>
-                <meta
-                    name="viewport"
-                    content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
-                />
-                <meta property="og:title" content="VI-(BUILD)" />
-                <meta
-                    property="og:description"
-                    content="Working together to breathe new life into your beloved spaces, one renovation project at a time with precision and creativity."
-                />
-                <meta
-                    property="og:image"
-                    content="https://www.vibuildlondon.co.uk/public/logo/Main black logo.png"
-                />
-                <meta property="og:url" content="https://www.vibuildlondon.co.uk/" />
-                <meta property="og:type" content="website" />
-            </Head>
-            <body className={`${roboto.className}`}>
+        <html lang="en">
+            <body className={roboto.className}>
                 <Nav className="relative" />
                 <main>{children}</main>
             </body>
