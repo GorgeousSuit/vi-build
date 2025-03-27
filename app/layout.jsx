@@ -19,14 +19,21 @@ export const metadata = {
         siteName: 'VI-(BUILD)',
         images: [
             {
-                url: 'https://www.vibuildlondon.co.uk/og-image.png', // Corrected path
+                url: 'https://www.vibuildlondon.co.uk/og-image.png',
+                type: 'image/png', // Image type
                 width: 1200,
                 height: 630,
-                alt: 'VI-(BUILD) Logo'
-            }
+                alt: 'VI-(BUILD) Logo',
+            },
         ],
-        type: 'website'
-    }
+        type: 'website',
+    },
+    other: {
+        'og:image': 'https://www.vibuildlondon.co.uk/og-image.png',
+        'og:image:type': 'image/png',
+        'og:image:width': '1200',
+        'og:image:height': '630',
+    },
 };
 
 const RootLayout = ({ children }) => {
