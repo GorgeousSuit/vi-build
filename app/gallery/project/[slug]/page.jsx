@@ -2,6 +2,7 @@ import { client } from '@sanity/lib/client.js';
 import { singleProjectQueryItem } from '@sanity/lib/queries.js';
 import GalleryDetails from '@components/Gallery/GalleryDetails';
 import Link from 'next/link';
+import Footer from '@components/Footer';
 
 export const revalidate = 60; // Revalidate every 60 seconds
 

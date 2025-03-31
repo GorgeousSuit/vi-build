@@ -234,7 +234,7 @@ const ContactUs = () => {
                             <div className="flex items-center">
                                 <IoMdMail className="w-12 h-8 mr-4" />
                                 <p className="text-gray-500">
-                                    hello@example.com
+                                vi.build.london@gmail.com
                                 </p>
                             </div>
                             <div className="flex items-center">
