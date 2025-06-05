@@ -22,7 +22,7 @@ const DescriptionBanner = () => {
         margin: mobileView ? '0% 0px 0% 0px' : '-0% 0px -0% 0px'
     });
     return (
-        <section className="sm:w-[100%] min-h-[350px] h-[38.75vw] xl:h-[496px] overflow-hidden relative flex justify-center text-white max-sm:rounded-[32px] max-sm:rounded-br-none max-sm:mx-[12px]">
+        <section className="sm:w-[100%] min-h-[350px] h-[38.75vw] xl:h-[496px] overflow-hidden relative flex justify-center text-white max-sm:rounded-[32px] max-sm:rounded-br-none max-sm:mx-[12px] mb-[80px]">
             <Image
                 src="/images/About/IMG_5457.JPG"
                 alt="Image"
@@ -43,7 +43,7 @@ const DescriptionBanner = () => {
                                 ease: [0.22, 1, 0.36, 1]
                             }}
                             viewport={{ once: true }}
-                            className="text-[30px] sm:text-[40px] leading-[50px]"
+                            className="text-[30px] sm:text-[40px] leading-[50px] hidden"
                         >
                             Elegant Home
                         </motion.span>
@@ -59,7 +59,7 @@ const DescriptionBanner = () => {
                                 ease: [0.22, 1, 0.36, 1]
                             }}
                             viewport={{ once: true }}
-                            className="text-[30px] sm:text-[40px] leading-[50px]"
+                            className="text-[30px] sm:text-[40px] leading-[50px] hidden"
                         >
                             Transformations
                         </motion.span>
@@ -76,10 +76,10 @@ const DescriptionBanner = () => {
                         viewport={{ once: true }}
                         className="max-sm:text-[16px] leading-[26px] my-[20px]"
                     >
-                        Working together to breathe new life into your beloved
-                        spaces, one
-                        <br className="max-sm:hidden" /> renovation project at a
-                        time with precision and creativity.
+                        VI Build specialises in the execution of high-end residential architecture — including full-scale refurbishments, bespoke extensions, loft conversions, fine stonework, and refined interior finishes.
+We realise architectural visions with technical accuracy, meticulous attention to detail, and an unwavering commitment to craftsmanship and quality.
+Every project is delivered with deep respect for the architect’s intent — executed with precision, professionalism, and reliability at every stage.
+We are equally committed to sustainable building practices — sourcing quality materials responsibly, reducing waste, and working in harmony with the environment wherever possible.
                     </motion.span>
                     <Link href="/gallery">
                         <motion.button

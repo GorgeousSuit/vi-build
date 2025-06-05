@@ -24,8 +24,8 @@ const Home = () => {
         <div className="absolute w-[calc(100vw)] space-y-[90px] lg:space-y-[160px] text-primary2 overflow-x-hidden">
             <Preloader />
             <Hero />
-            <Description />
             <DescriptionBanner />
+            <Description />            
             <div className="px-[12px] sm:px-[24px] lg:px-[32px]">
                 <Testimony />
             </div>

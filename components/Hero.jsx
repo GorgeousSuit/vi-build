@@ -14,26 +14,26 @@ const Banner = () => {
     }, []);
 
     return (
-        <section className="pt-[30px] pb-[80px] relative flex justify-center mt-[110px] overflow-hidden px-[12px] sm:px-[24px] lg:px-[32px]">
+        <section className="pt-[30px] pb-[80px] relative flex justify-center mt-[110px] overflow-hidden">
             <Preloader />
-            <div className="w-full h-[410px] max-w-[1000px] rounded-[32px] rounded-br-none border border-primary relative ">
-                <div className="w-[calc-(100%-24px)] lg:w-full h-full overflow-hidden rounded-[32px] rounded-br-none ">
+            <div className="w-full h-[410px] relative ">
+                <div className="w-[calc-(100%-24px)] lg:w-full h-full overflow-hidden">
                     <Image
                         src="/images/Banner1-2.jpg"
                         alt="Image"
                         width={1920}
                         height={1080}
-                        className="min-w-[1000px] max-sm:object-[calc(100vw-880px)_-200px] lg:w-full object-[calc(100vw-1000px)_-200px] min-[1000px]:object-[center_-200px]"
+                        className="max-[1000px]:min-w-[1000px] max-sm:object-[calc(100vw-880px)_-200px] object-[calc(100vw-1000px)_-200px] min-[1000px]:object-[left_-23.43vw]"
                         unoptimized
                         priority
                     />
-                    <motion.div className="absolute top-0 max-sm:right-[-145px] right-[-50px] lg:right-[-1px] h-[410px] w-[1000px] rounded-[32px] rounded-br-none">
+                    <motion.div className="absolute top-0 max-sm:right-[-120px] right-[0px] lg:right-[-1px] h-[410px] w-[1000px]">
                         <Image
                             src="/images/Banner1ladder.png"
                             alt="Image"
                             width={1920}
                             height={1080}
-                            className="absolute w-full object-cover object-[center_-200px]"
+                            className="min-[1000px]:hidden absolute w-full object-cover object-[center_-200px]"
                         />
                     </motion.div>
                     <Image
