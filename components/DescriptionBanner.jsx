@@ -22,16 +22,16 @@ const DescriptionBanner = () => {
         margin: mobileView ? '0% 0px 0% 0px' : '-0% 0px -0% 0px'
     });
     return (
-        <section className="sm:w-[100%] min-h-[350px] h-[38.75vw] xl:h-[496px] overflow-hidden relative flex justify-center text-white max-sm:rounded-[32px] max-sm:rounded-br-none max-sm:mx-[12px] mb-[80px]">
+        <section className="sm:w-[100%] min-h-[350px] md:h-[38.75vw] xl:h-[496px] overflow-hidden relative flex justify-center text-white mb-[80px]">
             <Image
                 src="/images/About/IMG_5457.JPG"
                 alt="Image"
                 width={1920}
                 height={1080}
-                className="min-w-[1024px] h-full object-cover object-[center_-300px] xl:object-[center_-400px] overflow-hidden brightness-50"
+                className="max-sm:min-w-[1024px] md:min-w-[1024px] h-full object-cover md:object-[center_-300px] xl:object-[center_-400px] brightness-50 max-sm:text-left"
                 unoptimized
             />
-            <div className="absolute inset-0 place-self-center py-[50px] max-xl:p-[32px] max-sm:text-center">
+            <div className="absolute inset-0 place-self-center py-[16px] md:py-[50px] max-sm:p-[16px] max-xl:p-[32px] max-sm:text-center">
                 <div className="w-[78.13vw] xl:w-[1000px] flex flex-col max-sm:items-center">
                     <div className="relative overflow-hidden flex flex-col">
                         <motion.span

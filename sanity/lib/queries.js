@@ -5,7 +5,8 @@ export const allProjectsQuery = `*[_type == "project"] | order(_createdAt desc) 
 	name,
 	"slug": slug.current,
 	"thumbnail": thumbnail.asset->url,
-	images
+	images,
+	description
    }`;
 
 export const singleProjectQuery = `*[_type == "project" && defined(slug.current)] | order(order asc) {
@@ -20,7 +21,8 @@ export const singleProjectQuery = `*[_type == "project" && defined(slug.current)
 	size,
 	type,
 	location,
-	cost
+	cost,
+	description
    }`;
 
    export const singleProjectQueryItem =
@@ -36,5 +38,6 @@ export const singleProjectQuery = `*[_type == "project" && defined(slug.current)
 	size,
 	type,
 	location,
-	cost
+	cost,
+	description
    }`);

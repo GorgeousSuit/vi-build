@@ -69,36 +69,35 @@ const GalleryDetails = ({ project }) => {
                         />
 
                         <div className="mt-4 grid grid-flow-col auto-cols-max gap-2 overflow-x-auto">
-                            {project.images.map((img, index) =>
+                            {project.images.map((img, index) => (
                                 <div key={img._key || index} className="">
                                     {isLoading && (
                                         <SmallImageLoader
-                                            key={index+"loader"}
+                                            key={index + 'loader'}
                                             src={img.url}
                                             alt="Thumbnail"
                                             width={100}
                                             height={75}
                                         />
                                     )}
-                                        <Image
-                                            key={index}
-                                            src={img.url}
-                                            alt="Thumbnail"
-                                            width={100}
-                                            height={75}
-                                            onLoad={() => setIsLoading(false)}
-                                            className={`cursor-pointer rounded-lg object-cover max-h-[70px] ${
-                                                selectedImage === img.url
-                                                    ? 'border-2 border-secondary1'
-                                                    : ''
-                                            } ${isLoading ? 'invisible' : 'visible'}`}
-                                            onClick={() =>
-                                                setSelectedImage(img.url)
-                                            }
-                                        />
+                                    <Image
+                                        key={index}
+                                        src={img.url}
+                                        alt="Thumbnail"
+                                        width={100}
+                                        height={75}
+                                        onLoad={() => setIsLoading(false)}
+                                        className={`cursor-pointer rounded-lg object-cover max-h-[70px] ${
+                                            selectedImage === img.url
+                                                ? 'border-2 border-secondary1'
+                                                : ''
+                                        } ${isLoading ? 'invisible' : 'visible'}`}
+                                        onClick={() =>
+                                            setSelectedImage(img.url)
+                                        }
+                                    />
                                 </div>
-                                
-                            )}
+                            ))}
                         </div>
                     </div>
                 )}
@@ -115,6 +114,7 @@ const GalleryDetails = ({ project }) => {
                             ['Building Type', project.type],
                             ['Location', project.location],
                             ['Cost', project.cost]
+                            
                         ].map(([label, value], index) => (
                             <div
                                 key={label}
@@ -127,8 +127,18 @@ const GalleryDetails = ({ project }) => {
                             </div>
                         ))}
                     </div>
-                </div>
+                </div>                
             </div>
+            {project.description && (
+                    <div className="mt-[16px] md:mt-[60px]">
+                        <h2 className="text-xl font-semibold text-primary mb-2">
+                            Description
+                        </h2>
+                        <p className="text-primary2 leading-relaxed whitespace-pre-line">
+                            {project.description}
+                        </p>
+                    </div>
+                )}
         </div>
     );
 };

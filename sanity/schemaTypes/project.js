@@ -54,11 +54,16 @@ export default defineType({
             type: 'string'
         }),
         defineField({
+            name: 'description',
+            title: 'Description',
+            type: 'text'
+        }),
+        defineField({
             name: 'order',
             title: 'Order',
             type: 'number',
             description: 'Lower numbers appear first'
-        })
+        }),
     ],
     orderings: [
         {
